@@ -1,0 +1,24 @@
+{
+  "name": "@atomicg/atomicg",
+  "version": "1.0.0",
+  "description": "AtomicG Client",
+  "main": "src/index.js",
+  "bin": "./src/index.js",
+  "scripts": {
+    "start": "cd workspace && node ../src/index.js"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "boxen": "^4.1.0",
+    "chalk": "^3.0.0",
+    "fs-extra": "^8.1.0",
+    "require-text": "0.0.1",
+    "websocket": "^1.0.30",
+    "yargs": "^15.0.2"
+  }
+}

@@ -1,0 +1,25 @@
+model:
+  name: MyModel
+  description: My Model
+
+  basepath:
+
+  uses:
+    - gen: mysql
+    - gen: sequelize
+    - gen: express
+
+  # Entities to be generated for this model.
+  entities:
+    - name: User
+      fields:
+        - name: email
+          type: string
+        - name: password
+          type: string
+        - name: name
+          type: string
+    - name: Group
+      fields:
+        - name: name
+          type: string

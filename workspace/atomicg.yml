@@ -1,0 +1,27 @@
+model:
+  name: MyModel
+  description: My Model
+
+  uses:
+    - gen: mysql # generate MySQL Server Scripts
+
+  # Entities to be generated for this model.
+  entities:
+    - name: User
+      fields:
+        - name: email
+          type: string
+          index: unique
+        - name: password
+          type: string
+        - name: name
+          type: string
+          index: indexed
+        - name: age
+          type: int
+        - name: salary
+          type: money
+    - name: Group
+      fields:
+        - name: name
+          type: string
