@@ -63,10 +63,8 @@ All model must have the root element "model" beneath it the following options ar
 The uses option allows to add a list with all the generators that will be generating code for this model. At this moment 
 only 3 are supported, they are de following.
 
-| option      | description                          | required |
-|-------------|--------------------------------------|----------|
-| name        | The name of the model.               | yes      |
-| description | A short description to this model.   | no       |
-| uses        | The list of generators to use.       | yes      |
-| entities    | The list of entities to be generated | yes      |
-
+| generator | description                                                                                          |
+|-----------|------------------------------------------------------------------------------------------------------|
+| mysql     | generates the DDL script for MySQL database.                                                         |
+| sequelize | generates a Sequelize model for each entity in the model.                                            |
+| express   | generates an expressjs CRUD router for each entity in the model, that can be used as part of an API. |
