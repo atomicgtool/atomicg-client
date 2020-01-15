@@ -1,10 +1,13 @@
 # AtomicG
 
-AtomicG is a CLI source code and text file generation tool.
+AtomicG is a CLI model-first source code generation tool, that can be used to automate the generation of regular and 
+boilerplate source code files for your project, like Rest API CRUDs handlers, SQL scripts, entity classes for ORMs, etc...
+You can read more about this tool in the official web site https://www.atomicg.dev/
 
 # Instalation
 
-AtomicG cli client can be installed using npm, it's recomended to install the cli globaly.
+AtomicG cli client can be installed using npm, it's recommended to install it globally, so it can be use in any project of 
+any supported platform.
 
     npm i @atomicg/atomicg -g
 
@@ -13,9 +16,9 @@ AtomicG cli client can be installed using npm, it's recomended to install the cl
 The first thing to do is to create a model to work with. An initial AtomicG model can be generated with the init command.
 
     atomicg init
-    
-This will create the atomicg.yml file in the current folder, the created model it's simply a starting point, entities 
-and generators must be added to the model to create usefull code for the project. The next section describes in detail
+
+This will create the *atomicg.yml* file in the current folder, the created model it's simply a starting point, entities 
+and generators must be added to the model to create useful code for the project. The next section describes in detail
 how to write a model. To generate the source code for the current model just run the tool with no options.
 
     atomicg    
@@ -51,7 +54,7 @@ is an example of an atomicg model.
             - name: name
               type: string
 
-All model must have the root element "model" beneath it the following options are availables.
+All model must have the root element *model* beneath it the following options are available.
 
 | option      | description                          | required |
 |-------------|--------------------------------------|----------|
@@ -60,16 +63,16 @@ All model must have the root element "model" beneath it the following options ar
 | uses        | The list of generators to use.       | yes      |
 | entities    | The list of entities to be generated | yes      |
 
-The "uses" option allows to add a list with all the generators that will be generating code for this model. At this moment 
+The *uses* option allows to add a list with all the generators that will be generating code for this model. At this moment 
 only 3 are supported, they are de following.
 
 | generator | description                                                                                          |
 |-----------|------------------------------------------------------------------------------------------------------|
 | mysql     | generates the DDL script for MySQL database.                                                         |
 | sequelize | generates a Sequelize model for each entity in the model.                                            |
-| express   | generates an expressjs CRUD router for each entity in the model, that can be used as part of an API. |
+| express   | generates an ExpressJS CRUD router for each entity in the model, that can be used as part of an API. |
 
-The "entities" tag is used to specify the entities of the model and each entity has the following options.
+The *entities* tag is used to specify the entities of the model and each entity has the following options.
 
 | option | description                                                                           | required |
 |--------|---------------------------------------------------------------------------------------|----------|
@@ -95,6 +98,7 @@ The following table shows the available datatypes.
 | int or integer | an integer number with customizable length         | int(<length>)                  | INTEGER(<length>)              |
 | byte           | an 1 byte integer                                  | byte                           | BYTE                           |
 | long           | an 8 byte integer                                  | bigint                         | LONG(<length>)                 |
+| boolean        | a boolean (true or false, usually 1 byte           | boolean                        | BOOLEAN                        |
 | char           | a character (usually 2 bytes)                      | char                           | CHAR                           |
 | string         | a customizable length string of characters         | varchar(<length>)              | STRING(<length>)               |
 | float          | a floating point number                            | float                          | FLOAT                          |
@@ -108,14 +112,15 @@ The following table shows the available options for the index tag.
 |---------|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 | none    | this is the default option, it means that this field will not be indexed.                                                                           |
 | indexed | this options means that the database generator and the orm generator will create and index on this field.                                           |
-| unique  | this options is the same as indexed but the created index will be a unique index, meanning that this field will have unique values in the database. |
+| unique  | this options is the same as indexed but the created index will be a unique index,  meaning that this field will have unique values in the database. |
 
 The following table shows the available options for the transform tag.
 
-| transform   | description                                                                                                                                        |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------|
-| trim        | this transformation is aplicable to string fields only and it will trim the white spaces characters from both size to any value pass to the field. |
-| upper       | this transformation is applicable to string fields only and it will convert to upper case any value that is pass to the field.                     |
-| lower       | this transformation is applicable to string fields only and it will convert to lower case any value that is pass to the field.                     |
-| emptyToNull | this transformation is applicable to string fields only and it will convert to null any empty string that is pass to the field.                    |
+| transform   | description                                                                             |
+|-------------|-----------------------------------------------------------------------------------------|
+| trim        | it will trim the white spaces characters from both size to any value pass to the field. |
+| upper       | it will convert to upper case any value that is pass to the field.                      |
+| lower       | it will convert to lower case any value that is pass to the field.                      |
+| emptyToNull | it will convert to null any empty string that is pass to the field.                     |
 
+NOTE: This transformations are applicable to string fields only.
