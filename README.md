@@ -2,7 +2,8 @@
 
 AtomicG is a CLI model-first source code generation tool, that can be used to automate the generation of regular and 
 boilerplate source code files for your project, like Rest API CRUDs handlers, SQL scripts, entity classes for ORMs, etc...
-You can read more about this tool in the official web site https://www.atomicg.dev/
+You can read more about this tool in the official web site https://www.atomicg.dev/, also join the discussion in our 
+discord server https://discord.gg/n65mRJZ or send us an email with any concern you have to info@atomicg.dev
 
 # Instalation
 
@@ -81,30 +82,31 @@ The *entities* tag is used to specify the entities of the model and each entity 
  
 The tags for each field are the following.
 
-| option    | description                                                                                                          | required |
-|-----------|----------------------------------------------------------------------------------------------------------------------|----------|
-| name      | the name of the field, this info will be used to generate properties and columns for the field.                      | yes      |
-| type      | the data type of the field, see the table of the available types for more information.                               | yes      |
-| required  | if the field is required or not, this determines if the column in the database allows null or not.                   | no       |
-| length    | the length of the field for string and numeric types.                                                                | no       |
-| precision | the precision of the field for decimals types.                                                                       | no       |
-| index     | if the field must be indexed, see the index type table for more info.                                                | no       |
-| transform | the transformation that are needed by default on the data of the field. see the transformations table for more info. | no       |
+| option    | description                                                                                                                       | required |
+|-----------|-----------------------------------------------------------------------------------------------------------------------------------|----------|
+| name      | the name of the field, this info will be used to generate properties and columns for the field.                                   | yes      |
+| type      | the data type of the field, see the table of the available types for more information.                                            | yes      |
+| required  | if the field is required or not, this determines if the column in the database allows null or not.                                | no       |
+| length    | the length of the field for string and numeric types. for the text data type this field most be either null, tiny, medium or long | no       |
+| precision | the precision of the field for decimals types.                                                                                    | no       |
+| index     | if the field must be indexed, see the index type table for more info.                                                             | no       |
+| transform | the transformation that are needed by default on the data of the field. see the transformations table for more info.              | no       |
 
 The following table shows the available datatypes.
 
-| datatype       | description                                        | SQL type                       | Sequelize type                 |
-|----------------|----------------------------------------------------|--------------------------------|--------------------------------|
-| int or integer | an integer number with customizable length         | int(<length>)                  | INTEGER(<length>)              |
-| byte           | an 1 byte integer                                  | byte                           | BYTE                           |
-| long           | an 8 byte integer                                  | bigint                         | LONG(<length>)                 |
-| boolean        | a boolean (true or false, usually 1 byte           | boolean                        | BOOLEAN                        |
-| char           | a character (usually 2 bytes)                      | char                           | CHAR                           |
-| string         | a customizable length string of characters         | varchar(<length>)              | STRING(<length>)               |
-| float          | a floating point number                            | float                          | FLOAT                          |
-| double         | a double precision floating point number           | double                         | DOUBLE                         |
-| decimal        | a customizable length and presicion decimal number | decimal(<length>, <precision>) | DECIMAL(<length>, <precision>) |
-| money          | a decimal number with 2 decimal places             | decimal(11,2)                  | DECIMAL(11,2)                  |
+| datatype       | description                                        | SQL type                          | Sequelize type                 |
+|----------------|----------------------------------------------------|-----------------------------------|--------------------------------|
+| int or integer | an integer number with customizable length         | INT(<length>)                     | INTEGER(<length>)              |
+| byte           | an 1 byte integer                                  | BYTE                              | BYTE                           |
+| long           | an 8 byte integer                                  | BIGINT                            | LONG(<length>)                 |
+| boolean        | a boolean (true or false, usually 1 byte           | BOOLEAN                           | BOOLEAN                        |
+| char           | a character (usually 2 bytes)                      | CHAR                              | CHAR                           |
+| string         | a customizable length string of characters         | VARCHAR(<length>)                 | STRING(<length>)               |
+| text           | a customizable (tiny, medium, long) text field     | TINYTEXT|TEXT|MEDIUMTEXT|LONGTEXT | TEXT(tiny|medium|long)         |
+| float          | a floating point number                            | FLOAT                             | FLOAT                          |
+| double         | a double precision floating point number           | DOUBLE                            | DOUBLE                         |
+| decimal        | a customizable length and precision decimal number | DECIMAL(<length>, <precision>)    | DECIMAL(<length>, <precision>) |
+| money          | a decimal number with 2 decimal places             | DECIMAL(11,2)                     | DECIMAL(11,2)                  |
 
 The following table shows the available options for the index tag.
 
