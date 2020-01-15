@@ -94,19 +94,21 @@ The tags for each field are the following.
 
 The following table shows the available datatypes.
 
-| datatype       | description                                        | SQL type                          | Sequelize type                 |
-|----------------|----------------------------------------------------|-----------------------------------|--------------------------------|
-| int or integer | an integer number with customizable length         | INT(length)                       | INTEGER(length)                |
-| byte           | an 1 byte integer                                  | BYTE                              | BYTE                           |
-| long           | an 8 byte integer                                  | BIGINT                            | LONG(length)                   |
-| boolean        | a boolean (true or false, usually 1 byte           | BOOLEAN                           | BOOLEAN                        |
-| char           | a character (usually 2 bytes)                      | CHAR                              | CHAR                           |
-| string         | a customizable length string of characters         | VARCHAR(<length>)                 | STRING(length)                 |
-| text           | a customizable (tiny, medium, long) text field     | TINYTEXT|TEXT|MEDIUMTEXT|LONGTEXT | TEXT(tiny|medium|long)         |
-| float          | a floating point number                            | FLOAT                             | FLOAT                          |
-| double         | a double precision floating point number           | DOUBLE                            | DOUBLE                         |
-| decimal        | a customizable length and precision decimal number | DECIMAL(length, precision)        | DECIMAL(length, precision)     |
-| money          | a decimal number with 2 decimal places             | DECIMAL(11,2)                     | DECIMAL(11,2)                  |
+| datatype | description                                        | SQL type                             | Sequelize type                       |
+|----------|----------------------------------------------------|--------------------------------------|--------------------------------------|
+| boolean  | a boolean (true or false, usually 1 byte           | BOOLEAN                              | BOOLEAN                              |
+| byte     | a 1 byte (8 bits) integer                          | TINYINT(length)                      | TINYINT(length)                      |
+| short    | a 2 bytes (16 bits) integer                        | INTEGER(length)                      | INTEGER(length)                      |
+| medium   | a 3 bytes (24 bits) integer                        | INTEGER(length)                      | INTEGER(length)                      |
+| integer  | a 4 bytes (32 bits) integer                        | INTEGER(length)                      | INTEGER(length)                      |
+| long     | a 8 bytes (64 bits) integer                        | BIGINT(length)                       | BIGINT(length)                       |
+| char     | a character (usually 2 bytes)                      | CHAR                                 | CHAR                                 |
+| string   | a customizable length string of characters         | VARCHAR(length)                      | STRING(length)                       |
+| text     | a customizable (tiny, medium, long) text field     | TINYTEXT, TEXT, MEDIUMTEXT, LONGTEXT | TEXT, TEXT('tiny', 'medium', 'long') |
+| float    | a floating point number                            | FLOAT                                | FLOAT                                |
+| double   | a double precision floating point number           | DOUBLE                               | DOUBLE                               |
+| decimal  | a customizable length and precision decimal number | DECIMAL(length, precision)           | DECIMAL(length, precision)           |
+| money    | a decimal number with 2 decimal places             | DECIMAL(11,2)                        | DECIMAL(11,2)                        |
 
 The following table shows the available options for the index tag.
 
