@@ -81,15 +81,15 @@ The *entities* tag is used to specify the entities of the model and each entity 
  
 The tags for each field are the following.
 
-| option    | description                                                                                                        | required |
-|-----------|--------------------------------------------------------------------------------------------------------------------|----------|
-| name      | the name of the field, this info will be used to generate properties and columns for the field.                    | yes      |
-| type      | the data type of the field, see the table of the available types for more information.                             | yes      |
-| required  | if the field is required or not, this determines if the column in the database allows null or not.                 | no       |
-| length    | the length of the field for string and numeric types.                                                              | no       |
-| precision | the precision of the field for decimals types.                                                                     | no       |
-| index     | if the field must be indexed, see the index type table for more info.                                              | no       |
-| transform | the transformation that are needed by default on the data of the field. see the transormation table for more info. | no       |
+| option    | description                                                                                                          | required |
+|-----------|----------------------------------------------------------------------------------------------------------------------|----------|
+| name      | the name of the field, this info will be used to generate properties and columns for the field.                      | yes      |
+| type      | the data type of the field, see the table of the available types for more information.                               | yes      |
+| required  | if the field is required or not, this determines if the column in the database allows null or not.                   | no       |
+| length    | the length of the field for string and numeric types.                                                                | no       |
+| precision | the precision of the field for decimals types.                                                                       | no       |
+| index     | if the field must be indexed, see the index type table for more info.                                                | no       |
+| transform | the transformation that are needed by default on the data of the field. see the transformations table for more info. | no       |
 
 The following table shows the available datatypes.
 
