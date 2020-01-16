@@ -93,23 +93,25 @@ The tags for each field are the following.
 | scale     | the scale of the field for decimals types.                                                                                        | no       |
 | index     | if the field must be indexed, see the index type table for more info.                                                             | no       |
 | transform | the transformation that are needed by default on the data of the field. see the transformations table for more info.              | no       |
+| values    | used with the enum datatype to specify the set of values that the enum accepts.                                                   | no       |
 
 The following table shows the available datatypes.
 
-| datatype | description                                    | SQL type                             | Sequelize type                       |
-|----------|------------------------------------------------|--------------------------------------|--------------------------------------|
-| boolean  | a boolean (true or false, usually 1 byte       | BOOLEAN                              | BOOLEAN                              |
-| byte     | a 1 byte (8 bits) integer                      | TINYINT(length)                      | TINYINT(length)                      |
-| short    | a 2 bytes (16 bits) integer                    | INTEGER(length)                      | INTEGER(length)                      |
-| medium   | a 3 bytes (24 bits) integer                    | INTEGER(length)                      | INTEGER(length)                      |
-| integer  | a 4 bytes (32 bits) integer                    | INTEGER(length)                      | INTEGER(length)                      |
-| long     | a 8 bytes (64 bits) integer                    | BIGINT(length)                       | BIGINT(length)                       |
-| char     | a fixed length string of characters            | CHAR(length)                         | CHAR(length)                         |
-| string   | a variable length string of characters         | VARCHAR(length)                      | STRING(length)                       |
-| text     | a customizable (tiny, medium, long) text field | TINYTEXT, TEXT, MEDIUMTEXT, LONGTEXT | TEXT, TEXT('tiny', 'medium', 'long') |
-| float    | a single-precision floating-point number       | FLOAT(length, decimals)              | FLOAT(length, precision)             |
-| double   | a double-precision floating-point number       | DOUBLE(length, decimals)             | DOUBLE(length, precision)            |
-| decimal  | a decimal number that can store exact numbers. | DECIMAL(precision, scale)            | DECIMAL(precision, scale)            |
+| datatype | description                                           | SQL type                             | Sequelize type                       |
+|----------|-------------------------------------------------------|--------------------------------------|--------------------------------------|
+| boolean  | a boolean (true or false, usually 1 byte              | BOOLEAN                              | BOOLEAN                              |
+| byte     | a 1 byte (8 bits) integer                             | TINYINT(length)                      | TINYINT(length)                      |
+| short    | a 2 bytes (16 bits) integer                           | INTEGER(length)                      | INTEGER(length)                      |
+| medium   | a 3 bytes (24 bits) integer                           | INTEGER(length)                      | INTEGER(length)                      |
+| integer  | a 4 bytes (32 bits) integer                           | INTEGER(length)                      | INTEGER(length)                      |
+| long     | a 8 bytes (64 bits) integer                           | BIGINT(length)                       | BIGINT(length)                       |
+| char     | a fixed length string of characters                   | CHAR(length)                         | CHAR(length)                         |
+| string   | a variable length string of characters                | VARCHAR(length)                      | STRING(length)                       |
+| text     | a customizable (tiny, medium, long) text field        | TINYTEXT, TEXT, MEDIUMTEXT, LONGTEXT | TEXT, TEXT('tiny', 'medium', 'long') |
+| float    | a single-precision floating-point number              | FLOAT(length, decimals)              | FLOAT(length, precision)             |
+| double   | a double-precision floating-point number              | DOUBLE(length, decimals)             | DOUBLE(length, precision)            |
+| decimal  | a decimal number that can store exact numbers.        | DECIMAL(precision, scale)            | DECIMAL(precision, scale)            |
+| enum     | an enumeration field that only allows a set of values | ENUM(values)                         | ENUM                                 |
 
 The following table shows the available options for the index tag.
 
