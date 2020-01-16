@@ -104,8 +104,8 @@ The following table shows the available datatypes.
 | medium   | a 3 bytes (24 bits) integer                    | INTEGER(length)                      | INTEGER(length)                      |
 | integer  | a 4 bytes (32 bits) integer                    | INTEGER(length)                      | INTEGER(length)                      |
 | long     | a 8 bytes (64 bits) integer                    | BIGINT(length)                       | BIGINT(length)                       |
-| char     | a character (usually 2 bytes)                  | CHAR                                 | CHAR                                 |
-| string   | a customizable length string of characters     | VARCHAR(length)                      | STRING(length)                       |
+| char     | a fixed length string of characters            | CHAR(length)                         | CHAR(length)                         |
+| string   | a variable length string of characters         | VARCHAR(length)                      | STRING(length)                       |
 | text     | a customizable (tiny, medium, long) text field | TINYTEXT, TEXT, MEDIUMTEXT, LONGTEXT | TEXT, TEXT('tiny', 'medium', 'long') |
 | float    | a single-precision floating-point number       | FLOAT(length, decimals)              | FLOAT(length, precision)             |
 | double   | a double-precision floating-point number       | DOUBLE(length, decimals)             | DOUBLE(length, precision)            |
