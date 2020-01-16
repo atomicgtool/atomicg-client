@@ -88,7 +88,9 @@ The tags for each field are the following.
 | type      | the data type of the field, see the table of the available types for more information.                                            | yes      |
 | required  | if the field is required or not, this determines if the column in the database allows null or not.                                | no       |
 | length    | the length of the field for string and numeric types. for the text data type this field most be either null, tiny, medium or long | no       |
+| decimals  | the number of decimals for floating-point data types                                                                              | no       |
 | precision | the precision of the field for decimals types.                                                                                    | no       |
+| scale     | the scale of the field for decimals types.                                                                                        | no       |
 | index     | if the field must be indexed, see the index type table for more info.                                                             | no       |
 | transform | the transformation that are needed by default on the data of the field. see the transformations table for more info.              | no       |
 
